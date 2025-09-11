@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Project page of CoDeC">
+  <meta property="og:title" content="Coupled Tensor Decomposition for Compact Network Representation" />
+  <meta property="og:description"
+    content="Project page of the paper Coupled Tensor Decomposition for Compact Network Representation" />
+  <meta property="og:url" content="https://github.com/codec-ai/codec-ai.github.io" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/banner.png" />
+  <meta property="og:image:width" content="128" />
+  <meta property="og:image:height" content="120" />
+
+
+  <meta name="twitter:title" content="Project page of CoDeC">
+  <meta name="twitter:description"
+    content="Project page of the IEEE Transactions on Neural Networks and Learning Systems paper Coupled Tensor Decomposition for Compact Network Representation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/banner.png">
+  <meta name="twitter:card" content="static/images/overview.png">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="CoDeC">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Coupled Tensor Decomposition for Compact Network Representation</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- MathJax configuration -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Add CSS for background -->
+  <style>
+    body {
+      background-size: cover;
+      /* Adjust the size of the background image */
+      background-position: center;
+      /* Center the background image */
+      background-repeat: no-repeat;
+      /* Prevent background image from repeating */
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // Array of colors resembling book paper
+    var bookPaperColors = [
+      '#f5f5dc', // Light Beige
+      '#fffff0', // Ivory
+      '#fdf5e6', // Old Lace
+      '#ffefd5', // Papaya Whip
+      '#faebd7'  // Linen
+    ];
+
+    // Function to get a random color from the array
+    function getRandomBookPaperColor() {
+      var randomIndex = Math.floor(Math.random() * bookPaperColors.length);
+      return bookPaperColors[randomIndex];
+    }
+
+    // Function to set random background color
+    function setRandomBackgroundColor() {
+      document.body.style.backgroundColor = getRandomBookPaperColor();
+    }
+
+    // Call the function to set the background color when the page loads
+    window.onload = setRandomBackgroundColor;
+  </script>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Coupled Tensor Decomposition for Compact Network Representation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://pageperso.lis-lab.fr/van-tien.pham/" target="_blank">Van Tien Pham</a>,</span>
+              <span class="author-block">
+                <a href="https://yzniyed.blogspot.com/p/about-me.html" target="_blank">Yassine Zniyed</a>,</span>
+              <span class="author-block">
+                <a href="https://webusers.i3s.unice.fr/~tpnguyen/" target="_blank">Thanh Phuong Nguyen</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://www.univ-tln.fr/" target="_blank" style="font-style: italic; color: black;">Université
+                  de Toulon</a>,
+                <a href="https://www.univ-amu.fr/" target="_blank" style="font-style: italic; color: black;">Université
+                  d'Aix-Marseille</a>,
+                <a href="https://www.cnrs.fr/fr" target="_blank" style="font-style: italic; color: black;">CNRS</a>,
+                <a href="https://www.lis-lab.fr/" target="_blank" style="font-style: italic; color: black;">LIS, UMR
+                  7020, France</a>
+              </span>
+              <span class="author-block">
+                <a href="https://univ-cotedazur.fr/" target="_blank"
+                  style="font-style: italic; color: black;">Université Côte d'Azur</a>,
+                <a href="https://www.cnrs.fr/fr" target="_blank" style="font-style: italic; color: black;">CNRS</a>,
+                <a href="https://www.i3s.unice.fr/en/" target="_blank" style="font-style: italic; color: black;">I3S,
+                  UMR 7271, France</a>
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=L8uT6hgMt00"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/codec-ai/codec-ai.github.io" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Hugging Face link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/codec/models" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span>🤗 Models</span>
+                  </a>
+                </span>
+
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://hal.science/hal-05249052" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Days since submission badge -->
+                <span class="link-block">
+                  <span id="days-since-submission" class="button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-calendar-alt"></i>
+                    </span>
+                    <span id="days-count"></span>
+                  </span>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- JavaScript to calculate days since submission -->
+  <script>
+    // Set the submission date
+    const submissionDate = new Date('2025-01-30');
+
+    // Calculate the difference in days
+    function updateDaysSinceSubmission() {
+      const currentDate = new Date();
+      const timeDiff = currentDate - submissionDate;
+      const daysSinceSubmission = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      document.getElementById('days-count').textContent = daysSinceSubmission + ' days since submission';
+    }
+
+    // Update the days on page load
+    document.addEventListener('DOMContentLoaded', updateDaysSinceSubmission);
+  </script>
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this paper, we introduce an approach called coupled filters decomposition, which builds on the
+              key observation that redundancy exists among filters within a convolutional layer, meaning that similar
+              filters can produce partially overlapping outputs. Leveraging this insight, we propose a joint
+              decomposition of filters using coupled tensor decompositions, specifically coupled canonical polyadic
+              decomposition, which enables the sharing of a common factor matrix across similar filters. This joint
+              factorization not only reduces the number of parameters but also lowers computational complexity by
+              eliminating redundant computations. To further enhance the efficiency of our approach, we first cluster
+              the filters (prior to decomposition) into groups that are better suited for coupled decomposition—where
+              the coupling constraint is less restrictive—using a custom metric based on the shared mode subspace.
+              Extensive experiments across various architectures, datasets, and tasks validate the effectiveness of our
+              method, demonstrating its competitive performance compared to state-of-the-art model compression
+              techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- News section -->
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">🔥 News</h2>
+      <ul>
+        <li><strong>10.09.2025:</strong> 🎉 Accepted! Our paper made it into <a
+            href="https://doi.org/10.1016/j.neunet.2025.107857">TNNLS</a> after 223 days since
+          submission!</li>
+      </ul>
+    </div>
+  </section>
+  <!-- End news section -->
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title">🎥 Presentation Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/L8uT6hgMt00?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">🔖 Citation</h2>
+      <p>If the code and paper help your research, please kindly cite:</p>
+      <pre><code id="citation">
+        @article{pham2025coupled,
+          title={Coupled Tensor Decomposition for Compact Network Representation},
+          author={Pham, Van Tien and Zniyed, Yassine and Nguyen, Thanh Phuong},
+          journal={IEEE Transactions on Neural Networks and Learning Systems},
+          year={2025},
+          pages={1--15},
+        }
+      </code></pre>
+      <button onclick="copyCitation()">Copy</button>
+    </div>
+  </section>
+
+  <script>
+    function copyCitation() {
+      const codeElement = document.getElementById('citation');
+      const range = document.createRange();
+      range.selectNode(codeElement);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+  <!--End BibTex citation -->
+
+
+  <!--Acknowledgements-->
+  <section class="section" id="acknowledgements">
+    <div class="container is-max-desktop content">
+      <h2 class="title">👍 Acknowledgements</h2>
+      <p>
+        This work was granted access to the high-performance computing resources of <a
+          href="http://www.idris.fr/eng/info/missions-eng.html">IDRIS</a> under the allocation 2023-103147 made by <a
+          href="https://genci.fr/">GENCI</a>. Specifically, our experiments were conducted on <a
+          href="http: //www.idris.fr/eng/jean-zay/jean-zay-presentation-eng.html">the Jean Zay supercomputer</a>,
+        located at IDRIS, the national computing center for <a href="https://www.cnrs.fr/fr">the National Centre for
+          Scientific Research (CNRS)</a>.
+      </p>
+      <p>
+        We thank <a href="https://anr.fr/fr/">the Agence Nationale de la Recherche (ANR)</a> for partially supporting
+        our work through the ANR ASTRID ROV-Chasseur project (<a
+          href="https://anr.fr/Projet-ANR-21-ASRO-0003">ANR-21-ASRO-0003</a>).
+      </p>
+      <figure>
+        <img src="./static/images/JeanZay.jpg" alt="jean-zay" style="width: 100%; height: auto;">
+        <img src="./static/images/Nouveau_logo_ANR_2022.jpg" alt="jean-zay" style="width: 100%; height: auto;">
+      </figure>
+    </div>
+  </section>
+  <!--End Acknowledgements-->
+
+
+  <!-- Statcounter tracking code -->
+  <script type='text/javascript' id='clustrmaps'
+    src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=256&t=n&d=nuxavhJpDrHo9PyHCCw6Hd5nhe8uq9alq1tAdw45iMU'></script>
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
