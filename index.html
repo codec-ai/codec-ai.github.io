@@ -295,25 +295,28 @@
           the filters, as noted in various CNN compression studies, particularly in similarity-based filter pruning
           methods. Since all filters extract information from a common input, partially similar filters may produce
           partially similar output features. To enhance computational efficiency, the redundant computation of these
-          similar parts should be avoided. </p>
+          similar parts should be avoided.
+        </p>
 
         <p>
           For example, in the top half of Figure&nbsp;1, the filters \(\tens{W}_1\) and \(\tens{W}_3\) exhibit partial
           similarity, leading to their output feature maps \(\tens{O}_1\) and \(\tens{O}_3\) sharing a similar component
           (shown in blue) that is computed twice, causing redundant calculations. To avoid such duplicative computations
-          and enhance efficiency, these filters can be jointly decomposed. </p>
+          and enhance efficiency, these filters can be jointly decomposed.
+        </p>
+      </div>
 
-        <!-- Figure appears right after 2nd paragraph -->
-        <div class="has-text-centered">
-          <figure>
-            <img src="./static/images/CoDec-teaser v1.2.png" alt="CoDeC teaser" style="width: 60%; height: auto;">
-            <figcaption>
-              <b>Figure 1:</b> Comparison between standard convolution <i>(top)</i> and CoDeC-based convolution with
-              coupled CPD factors <i>(bottom)</i>.
-            </figcaption>
-          </figure>
-        </div>
+      <div class="has-text-centered">
+        <figure>
+          <img src="./static/images/CoDec-teaser v1.2.png" alt="CoDeC teaser" style="width: 60%; height: auto;">
+          <figcaption>
+            <b>Figure 1:</b> Comparison between standard convolution <i>(top)</i> and CoDeC-based convolution with
+            coupled CPD factors <i>(bottom)</i>.
+          </figcaption>
+        </figure>
+      </div>
 
+      <div class="content has-text-justified">
         <p>
           Building on these insights, we introduce the concept of <em>coupled filters decomposition</em>. In this
           scheme, multiple filters are jointly approximated using coupled tensor decompositions. To demonstrate the use
