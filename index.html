@@ -360,7 +360,7 @@
             <strong>Coupled decomposition:</strong> Filters within each cluster are jointly decomposed using coupled
             CPD. The decomposition processes across all \(K\) clusters are depicted in the right half of Figure&nbsp;2.
             Once all clusters are processed in parallel, the output factor matrices are combined to form the
-            <strong>CoDeCBlock</strong>.
+            <strong>CoDeCBlock</strong> (Figure&nbsp;3).
           </li>
         </ol>
 
@@ -376,6 +376,15 @@
           <figcaption>
             <b>Figure 2:</b> CoDeC framework — filters are first clustered <i>(left)</i>, then each cluster is jointly
             decomposed using coupled canonical polyadic decomposition <i>(right)</i>.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="has-text-centered">
+        <figure>
+          <img src="./static/images/CoDecBlock.png" alt="The CoDeCBlock structure" style="width: 100%; height: auto;">
+          <figcaption>
+            <b>Figure 3:</b> The CoDeCBlock structure.
           </figcaption>
         </figure>
       </div>
