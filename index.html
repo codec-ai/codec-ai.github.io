@@ -392,6 +392,114 @@
   </section>
 
 
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title">🚩 Main results</h2>
+      <div class="content has-text-justified">
+        <p>
+          To demonstrate the adaptability of CoDeC, we assess 4 architectures: VGG-16, ResNet-20/32/56/110 with residual
+          blocks, DenseNet-40 with dense blocks, and SqueezeNet with fire modules. These models are tested on the
+          CIFAR-10/100 dataset. Additionally, to validate the scalability of CoDeC, experiments are conducted on the
+          ImageNet dataset using ResNet-18/32/50/152 architectures. Furthermore, the compressed ResNet-50 model is
+          employed as the backbone network for FasterRCNN, MaskRCNN, and KeypointRCNN on the COCO-2017 dataset. We
+          compare CoDeC with more than 50 related works, as detailed in the paper, and present ResNet-50 results on
+          ImageNet in <a href="#table1">Table 1</a> for clarity. Our method consistently surpasses other approaches
+          across all compression levels in terms of performance and complexity reduction.
+        </p>
+      </div>
+
+      <table id="table1" class="table is-striped is-fullwidth">
+        <caption><b>Table 1.</b> Compression results of ResNet-50 on ImageNet</caption>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Type</th>
+            <th>Top-1</th>
+            <th>Top-5</th>
+            <th>MACs (↓%)</th>
+            <th>Params (↓%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><em>ResNet-50 <a href="https://ieeexplore.ieee.org/document/7780459" target="_blank">(CVPR'16)</a></em>
+            </td>
+            <td></td>
+            <td>76.15</td>
+            <td>92.87</td>
+            <td>4.12G (00)</td>
+            <td>25.56M (00)</td>
+          </tr>
+          <tr>
+            <td>RR-Tu2 <a href="https://ieeexplore.ieee.org/document/10321737" target="_blank">(TNNLS'25)</a></td>
+            <td>Pruning + NAS + Knowledge Distillation</td>
+            <td>76.10</td>
+            <td>92.97</td>
+            <td>2.64B (36)</td>
+            <td>17.00M (33)</td>
+          </tr>
+          <tr>
+            <td>Lee <em>et al.</em> <a href="https://ieeexplore.ieee.org/document/10018843"
+                target="_blank">(TNNLS'24)</a></td>
+            <td>Pruning + NAS + Knowledge Distillation</td>
+            <td>76.23</td>
+            <td>92.87</td>
+            <td>2.48B (39)</td>
+            <td>21.56M (15)</td>
+          </tr>
+          <tr>
+            <td><strong>CoDeC (Ours)</strong></td>
+            <td>Coupled Canonical Polyadic Decomposition</td>
+            <td><strong>76.74</strong></td>
+            <td><strong>93.43</strong></td>
+            <td><strong>2.25B (45)</strong></td>
+            <td><strong>14.32M (44)</strong></td>
+          </tr>
+          <tr>
+            <td>HSC</em> <a href="https://ieeexplore.ieee.org/document/10819307" target="_blank">(TPAMI'25)</a></td>
+            <td>Pruning</td>
+            <td>75.46</td>
+            <td>92.40</td>
+            <td>1.57G (62)</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>BFP <a href="https://doi.org/10.1016/j.neucom.2025.130946" target="_blank">(Neurocomputing'25)</a></td>
+            <td>Pruning + Knowledge Distillation</td>
+            <td>75.47</td>
+            <td>92.47</td>
+            <td>1.68B (59)</td>
+            <td>13.48M (47)</td>
+          </tr>
+          <tr>
+            <td>CEPD <a href="https://ieeexplore.ieee.org/document/10574865" target="_blank">(TNNLS'25)</a></td>
+            <td>Tensor Train Decomposition + Pruning</td>
+            <td>75.82</td>
+            <td>92.84</td>
+            <td>1.53B (63)</td>
+            <td>9.38M (63)</td>
+          </tr>
+          <tr>
+            <td>LRPET <a href="https://ieeexplore.ieee.org/document/9716788" target="_blank">(TNNLS'25)</a></td>
+            <td>Singular Value Decomposition</td>
+            <td>75.91</td>
+            <td>92.79</td>
+            <td>1.90B (54)</td>
+            <td>12.89M (50)</td>
+          </tr>
+          <tr>
+            <td><strong>CoDeC (Ours)</strong></td>
+            <td>Coupled Canonical Polyadic Decomposition</td>
+            <td><strong>75.96</strong></td>
+            <td><strong>92.91</strong></td>
+            <td><strong>1.42B (66)</strong></td>
+            <td><strong>8.81M (66)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
