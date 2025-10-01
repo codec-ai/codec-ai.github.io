@@ -229,25 +229,26 @@
   <!-- Paper abstract -->
   <section class="section" style="background: transparent;">
     <div class="container is-max-desktop content">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            In this article, we introduce an approach called coupled filters decomposition, which builds on the key
-            observation that redundancy exists among filters in a convolutional layer, meaning that similar filters
-            can produce partially overlapping outputs. Leveraging this insight, we propose a joint decomposition of
-            filters using coupled tensor decompositions, specifically coupled canonical polyadic decomposition (CPD),
-            which enables the sharing of a common factor matrix across similar filters. This joint factorization not
-            only reduces the number of parameters but also lowers computational complexity by eliminating redundant
-            computations. To further improve efficiency, we first cluster the filters before decomposition. The
-            grouping relies on a custom metric based on the subspace spanned by the shared-mode factor. Within each
-            group, the coupling constraint is less restrictive. Extensive experiments across various architectures,
-            datasets, and tasks validate the effectiveness of our method, demonstrating its competitive performance
-            compared to state-of-the-art model compression techniques.
-          </p>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this article, we introduce an approach called coupled filters decomposition, which builds on the key
+              observation that redundancy exists among filters in a convolutional layer, meaning that similar filters
+              can produce partially overlapping outputs. Leveraging this insight, we propose a joint decomposition of
+              filters using coupled tensor decompositions, specifically coupled canonical polyadic decomposition (CPD),
+              which enables the sharing of a common factor matrix across similar filters. This joint factorization not
+              only reduces the number of parameters but also lowers computational complexity by eliminating redundant
+              computations. To further improve efficiency, we first cluster the filters before decomposition. The
+              grouping relies on a custom metric based on the subspace spanned by the shared-mode factor. Within each
+              group, the coupling constraint is less restrictive. Extensive experiments across various architectures,
+              datasets, and tasks validate the effectiveness of our method, demonstrating its competitive performance
+              compared to state-of-the-art model compression techniques.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
   <!-- End paper abstract -->
