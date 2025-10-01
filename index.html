@@ -48,8 +48,26 @@
   <script src="static/js/index.js"></script>
 
   <!-- MathJax configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        macros: {
+          // your LaTeX macros go here
+          tens: ["{\\boldsymbol{\\mathcal{#1}}}", 1],
+          matr: ["{\\mathbf{#1}}", 1],
+          vec: ["{\\mathbf{#1}}", 1],
+          tr: "\\mathrm{tr}", // example for trace operator
+          rank: "\\mathrm{rank}", // example for rank
+          // add more as needed
+        }
+      }
+    };
+  </script>
+
+  <!-- MathJax loader -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 
   <!-- Add CSS for background -->
   <style>
@@ -269,7 +287,59 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title">📜 Method</h2>
+      <h2 class="title">✨ Motivation</h2>
+
+      <div class="content has-text-justified">
+        <p>
+          We highlight a key observation that drives our approach: within a convolutional layer, redundancy exists among
+          the filters, as noted in various CNN compression studies, particularly in similarity-based filter pruning
+          methods. Since all filters extract information from a common input, partially similar filters may produce
+          partially similar output features. To enhance computational efficiency, the redundant computation of these
+          similar parts should be avoided. </p>
+
+        <p>
+          For example, in the top half of Figure&nbsp;1, the filters \(\tens{W}_1\) and \(\tens{W}_3\) exhibit partial
+          similarity, leading to their output feature maps \(\tens{O}_1\) and \(\tens{O}_3\) sharing a similar component
+          (shown in blue) that is computed twice, causing redundant calculations. To avoid such duplicative computations
+          and enhance efficiency, these filters can be jointly decomposed. </p>
+
+        <!-- Figure appears right after 2nd paragraph -->
+        <div class="has-text-centered">
+          <figure>
+            <img src="./static/images/CoDec-teaser v1.2.png" alt="CoDeC teaser" style="width: 100%; height: auto;">
+            <figcaption>
+              <b>Figure 1:</b> Comparison between standard convolution <i>(top)</i> and CoDeC-based convolution with
+              coupled CPD factors <i>(bottom)</i>.
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Building on these insights, we introduce the concept of <em>coupled filters decomposition</em>. In this
+          scheme, multiple filters are jointly approximated using coupled tensor decompositions. To demonstrate the use
+          of this method, we employ coupled CPD as a representative example due to its simplicity and efficiency,
+          although our approach can be adapted to other decomposition techniques. Specifically, instead of decomposing
+          each filter individually, we propose jointly factorizing them along a specific mode. After decomposition, the
+          jointly decomposed filters share a common factor matrix in the selected mode while retaining their unique
+          factor matrices in other modes.
+        </p>
+
+        <p>
+          This approach suggests that filters possess both common and particular characteristics. For instance, in the
+          bottom of Figure&nbsp;1, the two similar filters \(\tens{W}_1\) and \(\tens{W}_3\) are jointly factorized
+          along the first mode, yielding a common factor matrix \(\matr{A}^{(1)}\) and different factor matrices in the
+          other modes, namely matrices \(\matr{B}_1, \matr{C}_1\) and \(\matr{B}_3, \matr{C}_3\). Notably, since these
+          filters share the same input tensor, the computation between the decomposed common factor and the input must
+          only be performed once.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title">🎯 Approach</h2>
 
       <div class="content has-text-justified">
         <p>
@@ -277,18 +347,18 @@
           mode, rather than decomposing each filter independently. To enable effective joint decomposition, the
           framework groups filters based on their similarity in the chosen mode, ensuring that filters within the same
           group exhibit higher similarity in the joint mode subspace compared to those in different groups. To achieve
-          this, CoDeC adopts a two-stage process, as illustrated in Figure&nbsp;1, consisting of the following
+          this, CoDeC adopts a two-stage process, as illustrated in Figure&nbsp;2, consisting of the following
           components:
         </p>
 
         <ol>
           <li>
             <strong>Clustering:</strong> The filters of the original convolution layer are classified into
-            \(K\) clusters, as illustrated in the left half of Figure&nbsp;1.
+            \(K\) clusters, as illustrated in the left half of Figure&nbsp;2.
           </li>
           <li>
             <strong>Coupled decomposition:</strong> Filters within each cluster are jointly decomposed using coupled
-            CPD. The decomposition processes across all \(K\) clusters are depicted in the right half of Figure&nbsp;1.
+            CPD. The decomposition processes across all \(K\) clusters are depicted in the right half of Figure&nbsp;2.
             Once all clusters are processed in parallel, the output factor matrices are combined to form the
             <strong>CoDeCBlock</strong>.
           </li>
@@ -304,7 +374,7 @@
           <img src="./static/images/CoDec-birdview v1.4.png" alt="CoDeC framework diagram"
             style="width: 100%; height: auto;">
           <figcaption>
-            <b>Figure 1:</b> CoDeC framework — filters are first clustered <i>(left)</i>, then each cluster is jointly
+            <b>Figure 2:</b> CoDeC framework — filters are first clustered <i>(left)</i>, then each cluster is jointly
             decomposed using coupled canonical polyadic decomposition <i>(right)</i>.
           </figcaption>
         </figure>
